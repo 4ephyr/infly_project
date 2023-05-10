@@ -5,8 +5,6 @@
     margin: 0%;
     padding: 0%;
     font-family: 'Roboto', sans-serif;
-    /* box-sizing: border-box; */
-
 }
 *::before,*::after{
     box-sizing: border-box;
@@ -80,7 +78,6 @@ header{
     background: #5E17EB;
     height: 1420px;
     position: relative  ;
-    /* max-width: 100%; */
     box-sizing: border-box;
 }
 .textside{
@@ -123,7 +120,6 @@ header{
     color: whitesmoke;
     background-color: transparent;
     border: 1px solid #F7D460 ;
-    /* outline: 1px #F7D460; */
 }
 .sec1full{
     align-items: center;
@@ -142,7 +138,6 @@ header{
 }
  .imgover{
     position: absolute;
-    /* z-index: 99; */
     top: -51%;
     right: 0%;
 }
@@ -150,7 +145,6 @@ header{
   height: 14px;
   width: 14px;
   fill: #323C5C;
-  /* position: absolute; */
 }
 .box2 img{
   height: 14px;
@@ -180,24 +174,16 @@ header{
 .box-contents1 img{
   height: 252px;
   width: 290px;
-  /* position: absolute;
-  left: 40px;
-  top: 50px; */
 }
 .box-contents2 img{
   height: 220.11px;
   width: 290px;
-  /* position: absolute;
-  top: 120px; */
 }
 .box-contents3 img{
   height: 165px;
   width: 290px;
-  /* position: absolute;
-  top: 150px; */
 }
 .box-contents1{
-  /* box-sizing: border-box; */
   width: 24rem;
   height: 348.06px;
   background-color: #1792EB;
@@ -237,7 +223,6 @@ header{
   transition: .4s ease;
 }
 .sec2{
-  /* justify-content: space-around; */
   gap: 20px;
   position: relative;
   transform: translateY(24rem);
