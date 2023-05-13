@@ -1,47 +1,98 @@
-let link1 = document.getElementById('svg1')
-let svg1 = document.getElementById('dropicon')
-let boxes = document.getElementsByClassName('incheight')
-let hello = document.getElementsByClassName('test')
-let items = document.getElementsByClassName('item1')
-let itempic = document.getElementsByClassName('itempic')
-let x = boxes.length
-let y = items.length
-// console.log(z)
+const link1 = document.getElementById('svg1');
+const svg1 = document.getElementById('dropicon');
+const boxes = document.getElementsByClassName('incheight');
+const hello = document.getElementsByClassName('test');
+const items = document.getElementsByClassName('item1');
+const itempic = document.getElementsByClassName('itempic');
+const hiddenbox = document.getElementById('hiddenbox');
+const sec3 = document.getElementsByClassName('sec3full')
+const x = boxes.length;
+const y = items.length;
+
 link1.addEventListener('mouseover',()=>{
-    svg1.classList.add('svghover')
-})
+  svg1.classList.add('svghover');
+});
+
 link1.addEventListener('mouseout',()=>{
-    svg1.classList.remove('svghover')
-})
+  svg1.classList.remove('svghover');
+});
 
-for(let i = 0;i < x;i++){
-    boxes[i].addEventListener('mouseover',()=>{
-            hello[i].classList.add('height')
-    })
+const handleMouseOver = (index)=>{
+  hello[index].classList.add('height');
+};
+
+const handleMouseOut = (index)=>{
+  hello[index].classList.remove('height');
+};
+
+for (let i = 0; i < x; i++) {
+  boxes[i].addEventListener('mouseover',()=>{
+    handleMouseOver(i);
+  });
+
+  boxes[i].addEventListener('mouseout',()=>{
+    handleMouseOut(i);
+  });
 }
 
-for(let i = 0;i < x;i++){
-    boxes[i].addEventListener('mouseout',()=>{
-            hello[i].classList.remove('height')
-    })
+for (let j = 0; j < y; j++) {
+  items[j].addEventListener('mouseover',()=>{
+    itempic[j].classList.add('box-shadow');
+  });
+
+  items[j].addEventListener('mouseout',()=>{
+    itempic[j].classList.remove('box-shadow');
+  });
 }
 
-for(let i = 0;i < x;i++){
-    boxes[i].addEventListener('mouseout',()=>{
-            hello[i].classList.remove('box-shadow')
-    })
+for (let j = 0; j < y; j++) {
+  items[j].addEventListener('click', (event) => {
+    event.stopPropagation(); // Stop the click event from propagating to the document
+    console.log(hiddenbox);
+    hiddenbox.classList.toggle('width');
+  });
+} 
+
+document.addEventListener('click', (event) => {
+  const clickedElement = event.target;
+  const sideNav = document.getElementById('hiddenbox');
+
+  // Check if the clicked element is within the side navigation or its child elements
+  if (!sideNav.contains(clickedElement)) {
+    closeNav();
+  }
+});
+
+function closeNav() {
+  document.getElementById('hiddenbox').classList.remove('width');
 }
+// sec3.addEventListener('click',()=>{
+//   if(hiddenbox.classList.contains('width')){
+//         hiddenbox.classList.remove('width')
+//       }
+//         else{
+//           console.log("Error")
+//         }
+      
+//     })
 
-for(let j = 0;j < y;j++){
-    items[j].addEventListener('mouseover',()=>{
-            itempic[j].classList.add('box-shadow')
-    })
-}
+// function testfn(){
+//   if(hiddenbox.classList.contains('width')){
+//     // hiddenbox.classList.remove('width')
+//   }
+//     else{
+//       console.log("Error")
+//     }
+// }
 
-for(let j = 0;j < y;j++){
-    items[j].addEventListener('mouseout',()=>{
-            itempic[j].classList.remove('box-shadow')
-    })
-}
+// window.onclick = function(event) {
+//   if (event.target.matches('.sec3full')) {
 
-
+//       var sharedowns = hiddenbox;
+//                 var openSharedown = sharedowns;
+//           if (openSharedown.classList.contains('width')) {
+//               openSharedown.classList.remove('width');
+//           }
+      
+//   }
+// }
