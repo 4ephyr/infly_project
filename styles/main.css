@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;600;700;800;900&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,100;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@200;300;400;500;600;700&display=swap');
+html{
+  scroll-behavior: smooth;
+}
 *{
     margin: 0%;
     padding: 0%;
     font-family: 'Roboto', sans-serif;
-}
-*::before,*::after{
-    box-sizing: border-box;
 }
 .container{
     padding: 1.5rem 5rem;
@@ -21,20 +22,48 @@ header{
     align-items: center;
     justify-content: space-between;
 }
-.head-nav ul{
+.head-nav .nav-list{
     list-style: none;
     gap: .5rem;
 }
 
-.head-nav ul li a{
+.head-nav .nav-list li a{
     color: white;
     text-decoration: none;
     padding: 1rem;
     transition: .2s ease;
 }
+.nav-list{
+  position: relative;
+}
+.products{
+  position: absolute;
+  box-sizing: border-box;
+  top: 2rem;
+  z-index: -2;
+  opacity: 0;
+  transition: .4s ease;
+}
+.products.opacity{
+  opacity: 1;
+  z-index: 99;
+}
+.products .smalllist{
+  list-style: none;
+  height: 5rem;
+}
+.products li a{
+  padding: 1rem;
+  display: grid;
+  background-color: #F5F7F7;
+  color: #323C5C !important;
+  font-weight: 500;
+}
+.products li a:hover{
+  background-color: rgba(175, 175, 171, 0.815);
+}
 .head-nav ul li a:hover,.svg1:hover{
     color: rgba(243, 243, 41, 0.815);
-    /* fill: black; */
 }
 .drop{
     margin-left: .5rem;
@@ -128,10 +157,10 @@ header{
 
 .bigvector{
     position: absolute;
-    right: -6.5%;
     top: -54px;
-    height: 394px;
-    width: 985px;
+    height: 24.625rem;
+    width: 72.2vw;
+    left: 297px;
 }
  .imgover{
     position: absolute;
@@ -235,12 +264,11 @@ header{
   top: 250px;
 }
 .height{
-  height: 400px;
+  height: 400px !important;
 }
 .arrow{
   position: relative;
   top: 1040px;
-  /* bottom: 10px; */
   text-align: center  ;
   z-index: 999;
 }
@@ -269,20 +297,18 @@ header{
 .sec2heading{
   text-align: center;
   color: #323C5C  ;
-  margin-top: 10rem;
   margin-bottom: 3.5rem;
   font-size: 1.2rem;
 }
 .items{
   justify-content: space-evenly;
-  /* gap: 10px; */
 }
 .item1{
   max-width: 290px;
   margin: 0%;
-  /* justify-content: space-around; */
+  justify-content: space-around;
   transition: all 1s ease;
-  /* border-radius: 30px; */
+  position: relative;
 }
 .item1 img{
   border-radius: 10px;
@@ -303,9 +329,6 @@ header{
 .box-shadow{
   box-shadow: 0rem 0rem 2rem 5px rgb(212, 205, 205);
 }
-/* .items{
-  justify-content: space-evenly;
-} */
 .width{
   width: 25rem !important;
 }
@@ -313,32 +336,26 @@ header{
   height: 100%;
   width: 0rem;
   position: fixed;
-  /* z-index: -2; */
+  z-index: 99;
   overflow-y: scroll;
   top: 0;
   right: 0px;
   background-color: whitesmoke;
-  /* overflow-x: hidden; */
   transition: 0.5s;
-  /* padding-top: 60px; */
-  /* text-align: center; */
 }
 .inboximg{
   text-align: center;
-  /* width: 320px; */
   transition: 0.5s;
   max-width: 320px;
 }
 .inboximg img{
   border-radius: 10px;
   transition: 0.5s;
-  /* text-align: center; */
 }
 .smallimg{
   display: flex;
   justify-content: space-between;
   width: 320px;
-  /* gap: 10px; */
   transition: 0.5s;
 }
 .smallimg img{
@@ -358,7 +375,6 @@ header{
   display: grid;
   place-items: center;
   transition: 0.5s;
-  /* width: ; */
 }
 .prdctdetails{
   font-family: 'Montserrat', sans-serif;
@@ -366,18 +382,13 @@ header{
   color: #323C5C;
   margin-top: 10px;
   transition: 0.5s;
-  /* margin-bottom: 5px; */
   width: 320px;
 }
-/* .prdctdetails span{
-  margin-left: 4px;
-} */
 .prdctdetails .inboxhead{
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 5px;
   font-weight: bolder;
   transition: 0.5s;
-  /* margin: 5px 8px; */
 }
 .description{
   color: #323C5C;
@@ -420,9 +431,7 @@ header{
  }
  .rating img{
   height: 13.33px;
-  width: 13.33px;
-  /* max-width: 5px; */
-  /* margin-top: 1rem; */
+  width: 13.33px !important;
  }
  .rating span{
   font-size: 13px;
@@ -432,9 +441,7 @@ header{
  }
  .rating{
   display: flex;
-  /* max-width: 15rem; */
   gap: 5px;
-  /* justify-content: space-between; */
   align-items: center;
   margin-top: 1rem;
  }
@@ -451,7 +458,360 @@ header{
   color: #323C5C;
   border: 1px solid black;
  }
+ .sec3full{
+    background-color: #F5F7F7;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+ }
  .buynow:hover{
   background-color: #5E17EB;
   color: whitesmoke;
  }
+ #download{
+  position: absolute;
+  padding: .5rem;
+  background-color: rgba(255, 255, 255, 0.815);
+  border-radius: 50% !important;
+  top: .5rem;
+  right: .2rem;
+ }
+ #download:hover{
+  background-color: gray;
+
+ }
+ .explorebtn{
+  text-align: center;
+  margin: 5rem 0rem;
+  margin-bottom: 8rem;
+ }
+.explorebtn button{
+  padding: .75rem 10rem;
+  background-color: transparent;
+  border: 2px solid #5E17EB;
+  border-radius: .6rem;
+  font-size: .9rem;
+  font-weight: 600;
+  color: #5E17EB;
+  transition: .2s;
+  box-shadow: 0rem 0rem 2rem 5px rgb(212, 205, 205);
+}
+.explorebtn button:hover{
+  color: whitesmoke;
+  background-color: #5E17EB;
+}
+.feed{
+  text-align: center;
+  color: #323C5C;
+  word-spacing: .01rem;
+  font-size: 1.2rem;
+  font-family: 'Montserrat', sans-serif;
+}
+.cstmrs,.cstmrs2,.cstmrs3{
+  text-align: center;
+  position: relative;
+  font-weight: 500;
+  color: #323C5C;
+  margin: 0%;
+  background: #FFFFFF;
+  border-radius: 1rem;
+  padding: 3rem 2rem;
+  max-width: 25rem;
+  max-height: 8rem;
+}
+
+.feedp{
+  margin-bottom: .5rem;
+}
+.hai{
+  display: grid;
+  place-items: center;
+}
+div.rate{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+.cstmrfeedback{
+  justify-content: space-around;
+  position: relative;
+  margin-top: 3.5rem;
+  gap: 2rem;
+}
+.sharefeedback{
+  position: absolute;
+  writing-mode: vertical-lr;
+  left: 0;
+  color: whitesmoke;
+  height: 230px;
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
+  text-align: center;
+  width: 2.5rem;
+}
+.sharefeedback h4:hover{
+  background-color: #5e17ebab;
+}
+.sharefeedback h4{
+  padding: 2.1rem .7rem;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 0px ;
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  background-color: #5E17EB;
+  transition: .2s;
+  user-select: none;
+  cursor: pointer;
+}
+.feedback p{
+  font-size: .9rem;
+}
+.shopnow{
+  text-align: center;
+  margin-bottom: 8rem;
+  margin-top: 2rem;
+}
+.shareyourexp{
+  position: fixed;
+  background-color: white;
+  z-index: 999999999;
+  border-radius: .5rem;
+  transition: .5s;  
+  position: fixed;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 300%);
+}
+div.overlay{
+  transition: 3s ease;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  transition: 5s;
+}
+.shareyourexp.click{
+  transform: translate(-50%, 0%);
+  top: 20%;
+  left: 50%;
+  transition: .4s;
+}
+.shareyourexp .expcontent{
+  padding: 2.5rem 2rem;
+  box-sizing: border-box;
+}
+.expstars{
+  gap: .5rem;
+  max-width: 25rem;
+  margin-top: 1rem;
+}
+.expcontent h3{
+  font-weight: 500;
+  color: #323C5C;
+}
+.expcontent p{
+  margin: .7rem 0rem;
+  font-family: 'Roboto Flex';
+  color: #323C5C;
+  font-weight: 500;
+  font-size: 1rem;
+}
+.expcontent textarea{
+  width: 0;
+  width: 100%;
+  resize: vertical;
+  box-sizing: border-box;
+  min-height: 3rem;
+  max-height: 7rem;
+}
+.expbuttons button{
+  padding: .7rem 5rem;
+  border: .15rem solid #5E17EB;
+  background-color: transparent;
+  border-radius: .5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: .2s;
+}
+.expbuttons button:nth-child(1):hover{
+  cursor: pointer;
+}
+.expbuttons button:nth-child(2):hover{
+  background-color: whitesmoke;
+  color: #323C5C;
+  cursor: pointer;
+}
+.expbuttons button:nth-child(2){
+  color: white;
+  background-color: #5E17EB;
+}
+.expbuttons{
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+.expcontent input{
+  height: 2rem;
+  width: 100%;
+}
+.expcontent img{
+  height: 2rem;
+
+  width: 2rem;
+}
+.shopnow button{
+  padding: .75rem 10rem;
+  background-color: transparent;
+  border: 2px solid #5E17EB;
+  border-radius: .6rem;
+  font-size: .9rem;
+  font-weight: 600;
+  color: #5E17EB;
+  transition: .2s;
+  box-shadow: 0rem 0rem 2rem 5px rgb(212, 205, 205);
+}
+.shopnow button:hover{
+  color: whitesmoke;
+  background-color: #5E17EB;
+}
+.aboutus{
+  display: flex;
+  justify-content: center;
+}
+.aboutcontent{
+  max-width: 67.563rem;
+  border-radius: .8rem;
+  padding: 3rem 4rem;
+  color: whitesmoke;
+  background: #69648C;
+}
+.aboutcontent h3{
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+.aboutcontent p:nth-child(2){
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+.aboutcontent p:nth-child(3){
+  line-height: 1.5;
+  font-size: 1.1rem;
+}
+.newsletter{
+  width: 100%;
+  text-align: center;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  box-shadow: 0rem -1rem 2rem 5px rgb(212, 205, 205);
+}
+.newshead{
+  display: grid;
+  place-items: center;
+}
+.newshead h1{
+  text-align: center;
+  max-width: 55vw;
+  margin: 0;
+  color: #323C5C;
+  font-family: 'Montserrat', sans-serif;
+}
+.details{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 5rem;
+}
+
+.newsletter input{
+  padding: .4rem .5rem;
+  width: 24rem;
+  border: 0px;
+  border-radius: 10px;
+  border-bottom: 2px solid rgba(175, 175, 171, 0.815);
+}
+.newsletter button{
+  padding: .6rem 4rem;
+  border-radius: .7rem;
+  border: 1px solid #5E17EB;
+  background-color: #5E17EB;
+  color: whitesmoke;
+  font-weight: 500;
+  transition: .2s;
+  box-shadow: 0rem 0rem 2rem 5px rgb(210, 205, 212);
+}
+.newsletter button:hover{
+  background-color: white;
+  color: black;
+}
+footer{
+  background: #323C5C;  
+}
+.heading{
+  color: #F5F7F7;
+  margin: 0;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  max-width: 6.25rem;
+}
+.misc{
+  max-width: 35vw;
+  gap: 10vw;
+  margin: 0;
+}
+.misc ul{
+  list-style: none;
+  line-height: 2;
+}
+.misc ul li a{
+  text-decoration: none;
+  color: #F5F7F7;
+  transition: .2s;
+}
+.misc ul li a:hover{
+  color: #777;
+}
+.handles{
+  color: #F5F7F7;
+  box-sizing: border-box;
+  margin: 0px;
+  display: inline;
+  padding: 2rem;
+}
+.handles p{
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: .5rem;
+  box-sizing: border-box;
+  max-width: 8.875rem;
+}
+.handles ul{
+  list-style: none;
+  display: flex;
+  max-width: 8.875rem;
+  gap: 1rem;
+  margin: 0;
+  font-size: 1.5rem;
+}
+.handles ul li a{
+  text-decoration: none;
+  color: whitesmoke;
+  transition: .2s;
+}
+.handles ul li a:hover{
+  color: #777;
+}
+.space{
+  justify-content: space-between;
+}

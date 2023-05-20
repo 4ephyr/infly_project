@@ -6,6 +6,11 @@ const items = document.getElementsByClassName('item1');
 const itempic = document.getElementsByClassName('itempic');
 const hiddenbox = document.getElementById('hiddenbox');
 const sec3 = document.getElementsByClassName('sec3full')
+const feedback = document.getElementById('feedbackbtn')
+const products = document.getElementById('products')
+const popup = document.getElementById('popup')
+const overlay = document.createElement('div');
+
 const x = boxes.length;
 const y = items.length;
 
@@ -61,38 +66,39 @@ document.addEventListener('click', (event) => {
   if (!sideNav.contains(clickedElement)) {
     closeNav();
   }
+  if (!popup.contains(event.target)) {
+    popup.classList.remove('click');
+  }
+  if (!products.contains(event.target)) {
+    products.classList.remove('opacity');
+  }
 });
+
+function hideProducts(event){
+  products.classList.toggle('opacity')
+  event.stopPropagation();
+}
 
 function closeNav() {
   document.getElementById('hiddenbox').classList.remove('width');
 }
-// sec3.addEventListener('click',()=>{
-//   if(hiddenbox.classList.contains('width')){
-//         hiddenbox.classList.remove('width')
-//       }
-//         else{
-//           console.log("Error")
-//         }
-      
-//     })
+function closeExp(){
+  popup.classList.remove('click')
+  document.body.removeChild(overlay);
+}
+feedback.addEventListener('click', (event) => {
+  event.stopPropagation();
+  popup.classList.toggle('click');
+  document.body.appendChild(overlay);
+});
 
-// function testfn(){
-//   if(hiddenbox.classList.contains('width')){
-//     // hiddenbox.classList.remove('width')
-//   }
-//     else{
-//       console.log("Error")
-//     }
-// }
+popup.addEventListener('click', (event) => {
+  event.stopPropagation();
+});
 
-// window.onclick = function(event) {
-//   if (event.target.matches('.sec3full')) {
+overlay.classList.add('overlay');
 
-//       var sharedowns = hiddenbox;
-//                 var openSharedown = sharedowns;
-//           if (openSharedown.classList.contains('width')) {
-//               openSharedown.classList.remove('width');
-//           }
-      
-//   }
-// }
+overlay.addEventListener('click', () => {
+  popup.classList.remove('click');
+  document.body.removeChild(overlay);
+});
