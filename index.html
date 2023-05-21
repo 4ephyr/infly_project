@@ -48,9 +48,15 @@
                 </ul>
             </nav>
         </div>
+        <nav class="mobilenav">
+            <i class="fa-solid fa-bars"></i>
+        </nav>
     </header>
     <section class="top-section container">
-        <div class="sec1full flex-box">
+        <div class="sec1full">
+            <div class="sptimg">
+                <img class="imgover" src="./images/png/spotIllustration_01 1.png" alt="">
+            </div>
                  <div class="contents1">
                     <div class="textside">
                         <h1>Become an <br><span class="influencer">INFLUENCER</span><h1>
@@ -58,10 +64,7 @@
                         <button class="offerbtn"><i>Buy all @<span>&#8377</span>1999/-</i></button>
                     </div>
                 </div>
-                <div class="contents2">
                     <img class="bigvector" src="./images/png/Vector 5.png" alt="">
-                    <img class="imgover" src="./images/png/spotIllustration_01 1.png" alt="">                        
-                </div>
         </div>
         <div class="sec2 flex-box">
             <div class="box1 incheight">
@@ -275,16 +278,24 @@
             </div>
         </div>
     </section>
-    <div class="newsletter">
-        <div class="newshead">
-            <h1>Stay in the Loop with Our New Arrivals and Unbeatble Offers</h1>
+    <div class="mobilerate">
+        <div class="exprate">
+            <h3>Share Your Experience with us</h3>
+            <a href="javascript:void(0)" id="rate">Rate</a>
         </div>
-        <div class="details">
-            <div class="emailinput">
-                <input type="email" name="" id="" placeholder="Enter your email here">
+    </div>
+    <div class="mobilebox">     
+        <div class="newsletter">
+            <div class="newshead">
+                <h1 class="newsh1">Stay in the Loop with Our New Arrivals and Unbeatble Offers</h1>
             </div>
-            <div class="subscribe">
-                <button>Subscribe Now</button>
+            <div class="details">
+                <div class="emailinput">
+                    <input type="email" name="" id="inputbox1" placeholder="Enter your email here">
+                </div>
+                <div class="subscribe">
+                    <button>Subscribe Now</button>
+                </div>
             </div>
         </div>
     </div>
@@ -294,33 +305,33 @@
                 <h2><i>INFLY</i></h2>
             </div>
             <div class="flex-box space">
-            <div class="misc flex-box">
-                <div class="hm">
+                <div class="misc flex-box">
+                    <div class="hm">
+                        <ul>
+                            <li><a href="#">HOME</a></li>
+                            <li><a href="#">ABOUT</a></li>
+                            <li><a href="#">CONTACT</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="terms">
+                        <ul>
+                            <li><a href="#">TERMS & CONDITIONS</a></li>
+                            <li><a href="#">PRIVACY POLICY</a></li>
+                            <li><a href="#">REFUND & RETURN POLICY</a></li>
+                            <li><a href="#">SHIPPING & DELIVERY</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="handles">
+                    <p>FOLLOW US ON</p>
                     <ul>
-                        <li><a href="#">HOME</a></li>
-                        <li><a href="#">ABOUT</a></li>
-                        <li><a href="#">CONTACT</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa-regular fa-envelope"></i></a></li>
                     </ul>
                 </div>
-                <div class="terms">
-                    <ul>
-                        <li><a href="#">TERMS & CONDITIONS</a></li>
-                        <li><a href="#">PRIVACY POLICY</a></li>
-                        <li><a href="#">REFUND & RETURN POLICY</a></li>
-                        <li><a href="#">SHIPPING & DELIVERY</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="handles">
-                <p>FOLLOW US ON</p>
-                <ul>
-                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa-regular fa-envelope"></i></a></li>
-                </ul>
-            </div>
         </div>
         </div>
     </footer>
@@ -330,6 +341,7 @@
        $('.owl-carousel').owlCarousel({
     loop:true,
     margin:10,
+    lazyload:true,
     nav:true,
     responsive:{
         0:{
