@@ -8,9 +8,11 @@ const hiddenbox = document.getElementById('hiddenbox');
 const sec3 = document.getElementsByClassName('sec3full');
 const feedback = document.getElementById('feedbackbtn');
 const products = document.getElementById('products');
+const mobilediv = document.getElementById('mbdiv');
 const aboutus = document.querySelector('.aboutus')
 const feed = document.querySelector('.feed')
 const popup = document.getElementById('popup');
+const mobilenav = document.getElementById('mob');
 const overlay = document.createElement('div');
 
 const x = boxes.length;
@@ -20,6 +22,9 @@ link1.addEventListener('mouseover', () => {
   svg1.classList.add('svghover');
 });
 
+// window.location.href.split('#')[0]
+// history.replaceState({}, document.title, ".");
+// window.location.href.substr(0, window.location.href.indexOf('#*'))
 link1.addEventListener('mouseout', () => {
   svg1.classList.remove('svghover');
 });
@@ -63,6 +68,9 @@ for (let j = 0; j < y; j++) {
   }
   });
 }
+mobilenav.addEventListener('click',()=>{
+  mobilediv.classList.toggle('h-auto')
+})
 
 document.addEventListener('click', (event) => {
   const clickedElement = event.target;

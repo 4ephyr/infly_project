@@ -19,6 +19,7 @@ html{
 
 header{
     background: #5E17EB;
+    position: relative !important;
     align-items: center;
     justify-content: space-between;
 }
@@ -106,7 +107,7 @@ header{
 .top-section{
     background: #5E17EB;
     height: 88.75rem;
-    position: relative  ;
+    position: relative;
     box-sizing: border-box;
 }
 .textside{
@@ -858,12 +859,49 @@ footer{
   background-color: rgba(175, 175, 171, 0.815);
 }
 .mobilenav{
+  /* position: absolute; */
+  /* top: 1.5rem; */
+  /* right: 1rem; */
   display: none;
   font-size: 1.5rem;
   color: #F5F7F7;
   padding: .8rem;
   border-radius: .5rem;
 }
+.mobilediv{
+  position: absolute;
+  /* left: 50%; */
+  top: 0%;
+  /* transform: translate(-50%,-50%); */
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  transition: .4s;
+  height: 0;
+  left: 0 ;
+}
+.mobilediv.h-auto{
+  height: 15rem;
+  /* top: 15%; */
+}
+.mobilediv ul{
+  list-style-type: none;
+}
+
+.mobilediv .mobilelistcontent ul li a{
+  text-decoration: none;
+  color: #323C5C;
+  padding: 1rem;
+  line-height: 2;
+  font-weight: 500;
+}
+.mobilelistcontent ul li{
+  background-color: white;
+  height: 7vh;
+  display: grid;
+  place-items: center;
+}
+
     /* Responsive Design Starts Here */
 
 @media all and (width < 930px){
@@ -962,6 +1000,24 @@ footer{
     gap: 2.5rem;
   }
 }
+@media all and (width > 135px){
+  .bigvector{
+    width: 71.2vw;
+  }
+}
+@media all and (width > 1525px) {
+    .bigvector{
+        width: 74.9vw;
+    }
+}
+@media all and ((width > 1690px)) {
+    .bigvector{
+        width: 77.8vw;
+    }
+    .imgover{
+      right: 3.5vw;
+    }
+}
 @media all and (height < 500px) {
     .shareyourexp{
         max-height: 95vh;
@@ -1016,6 +1072,9 @@ footer{
 @media all and (width < 560px){
   .space{
     display: block;
+  }
+  .hm{
+    display: none;
   }
 }
 @media all and (width < 550px){
