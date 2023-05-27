@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./checkout.css">
-    <title>Checkout</title>
+    <title>Checkout | Infly</title>
 </head>
 <body>
     <header class="main-header container">
@@ -17,15 +17,41 @@
             <div class="cb">
                 <p><a href="../index.html">Continue Browsing</a></p>
             </div>
+            <div class="c-menu" id="m-menu">
+                <svg width="20" height="15" viewBox="0 0  20 15" preserveAspectRatio="xMidYMid meet"><line x1="0" y1="0.5" x2="20" y2="0.5" style="stroke: rgb(36, 36, 36); fill: none; stroke-width: 1px;"></line><line x1="0" y1="7.5" x2="20" y2="7.5" style="stroke: rgb(36, 36, 36); fill: none; stroke-width: 1px;"></line><line x1="0" y1="14.5" x2="20" y2="14.5" style="stroke: rgb(36, 36, 36); fill: none; stroke-width: 1px;"></line></svg>
+            </div>
         </div>
     </header>
     <section class="m-s container">
+        <div class="mn-div" id="mn-bx">
+            <ul>
+                <li><a href="../index.html">Continue Browsing</a></li>
+                <li><a href="#">Edit Cart</a></li>
+            </ul>
+        </div>
         <div class="main-d flex">
             <div class="left-d">
-                <div class="pay1">
-                    <h1>1 &nbsp; Payment</h1>
+                <div class="pay1 flex">
+                    <div class="p-h"><h1><span>1</span> &nbsp;Payment</h1></div>
+                    <div class="editlink"><a href="#">Edit</a></div>
                 </div>
-                <div class="gift-rd">
+                <div class="aftercntnu-details" id="billing-addr">
+                    <div class="rzpay flex">
+                        <div class="rzpimg">
+                            <img src="https://wixmp-6613fa290e8c1ac70a0297b6.wixmp.com/payment-methods/checkout/svg/razorpay.svg?v2023-05-26" alt="rzp-image" height="50px" width="100px">
+                        </div>
+                        <div class="rzptxt">
+                            <span>Paying with Razorpay</span>
+                        </div>
+                    </div>
+                    <div class="bill-details">
+                        <div class="bill-name"><span>test name</span></div>
+                        <div class="bill-mail"><span>test@example.com</span></div>
+                        <div class="bill-address">kdlr tcr kerala</div>
+                        <div class="bill-phone">0000000000</div>
+                    </div>
+                </div>
+                <div class="gift-rd" id="redeem">
                     <div class="flex chknl">
                         <input type="checkbox" class="chkbx" id="chkbx">
                         <div><h4>Redeem a gift card</h4></div>
@@ -35,7 +61,7 @@
                         <button class="appbtn" id="appbtn" type="button">APPLY</button>
                     </div>
                 </div>
-                <div class="rzp-bx">
+                <div class="rzp-bx" id="rzp-box">
                      <div class="rzp-1">
                          <span><span>Pay with</span><span>&nbsp;</span><span>Razorpay</span></span>
                      </div>   
@@ -48,10 +74,159 @@
                         </div>
                     </div>
                 </div>
+                <div class="b-a" id="bill-form">
+                    <div class="b-h">
+                        <h3>Billing address</h3>
+                    </div>
+                    <fom action="" class="billform">
+                        <div class="b-ac">
+                            <div class="odr-cnf">
+                                <p>*Email for order confirmation</p>
+                            </div>
+                            <div class="emlinpt">
+                                <input type="email" class="inbx"><br>
+                                <span class="v-msg"></span>
+                            </div>
+                        </div>
+                        <div class="f-nm">
+                            <div class="f-h">
+                                <p>*First name</p>
+                            </div>
+                            <div class="f-inpt">
+                                <input type="text" class="inbx">
+                                <span class="v-msg"></span>
+                            </div>
+                        </div>
+                        <div class="l-nm">
+                            <div class="l-h">
+                                <p>*Last name</p>
+                            </div>
+                            <div class="l-inpt">
+                                <input type="text" class="inbx">
+                                <span class="v-msg"></span>
+                            </div>
+                        </div>
+                        <div class="addr">
+                            <div class="a-h">
+                                <p>*Address</p>
+                            </div>
+                            <div class="addrinpt">
+                                <input type="text" class="inbx">
+                                <span class="v-msg"></span>
+                            </div>
+                        </div>
+                        <div class="cty">
+                            <div class="c-h">
+                                <p>*City</p>
+                            </div>
+                            <div class="ctyinpt">
+                                <input type="text" class="inbx">
+                                <span class="v-msg"></span>
+                            </div>
+                        </div>
+                        <div class="contry-region flex">
+                            <div class="cntry-reg">
+                                <div class="cntry">
+                                    <p>*Country</p>
+                                    <input type="text" class="inbx">
+                                    <span class="v-msg"></span>
+                                </div>
+                                <div class="cntry">
+                                    <p>*Zip/Postal</p>
+                                    <input type="text" class="inbx">
+                                    <span class="v-msg"></span>
+                                </div>
+                            </div>
+                            <div class="cntry-reg">
+                                <div class="cntry">
+                                    <p>*Region</p>
+                                    <input type="text" class="inbx">
+                                    <span class="v-msg"></span>
+                                </div>
+                                <div class="cntry">
+                                    <p>*Phone</p>
+                                    <input type="text" class="inbx">
+                                    <span class="v-msg"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="c-btn">
+                            <button onclick="myFunction()" class="cn-btn" id="cntbtn">Continue</button>
+                        </div>
+                    </fom>
+                </div>
+                <div class="review">
+                    <div class="review2" id="rev-div">
+                        <h1><span>2</span> &nbsp;Review and place order</h1>
+                    </div>
+                    <div class="aftr-cntnu-open" id="rev-div-content">
+                        <div class="checkdetails">
+                            <p>Review the order details above, and place your order when you’re ready.</p>
+                        </div>
+                        <div class="p-order">
+                            <button>Place Order</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
             <div class="right-d">
-
+                <div class="ordersum">
+                    <div class="ordersum-c1">
+                        <div class="ordersum-h flex">
+                            <div class="m-h">
+                                <h2>Order summary (<span>1</span>)</h2>
+                            </div>
+                            <div class="edtcrt" id="editcart">
+                                <span><a href="#">Edit</a></span>
+                            </div>
+                        </div>
+                        <div class="cartitems flex">
+                            <div class="orderitem flex">
+                                <div class="itemimg"><img src="../images/png/item.png" alt="" width="60px"></div>
+                                <div class="itemdetails">
+                                    <span>700+ GB Ultimate Graphic Designing Pack.</span><br>
+                                        <span>Qty: 1</span>
+                                </div>
+                            </div>
+                            <div class="item-price">
+                                <span><span>&#8377</span>95.00</span>
+                            </div>
+                        </div>
+                        <div class="promocode">
+                            <div class="promo-v flex" id="promoopen">
+                                <div class="promosvg"><svg viewBox="0 0 14 16" fill="currentColor" width="1em" height="1em"><g transform="rotate(30 7.442 12.846)" fill="currentColor" fill-rule="evenodd"><path d="M1 14.005C1 14 9.005 14 9.005 14 9 14 9 5.414 9 5.414l-4-4-4 4v8.59zM0 5l5-5 5 5v9.005c0 .55-.456.995-.995.995H.995C.445 15 0 14.544 0 14.005V5z" fill-rule="nonzero"></path><circle cx="5" cy="5" r="1"></circle></g></svg>
+                                </div>
+                                <div class="promo-text"><span><u> Enter a promo code</u></span></div>
+                            </div>
+                            <div class="promo-h" id="hiddenpromobox">
+                                <div class="promoinpt">
+                                    <input type="text" class="prmo-input" id="promoinpt">
+                                </div>
+                                <div class="promo-apply">
+                                    <button id="promoapply" class="promoapply">Apply</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="prices flex">
+                            <div class="miscprice flex">
+                                <span>Subtotal</span>
+                                <span>Taxes</span>
+                            </div>
+                            <div class="miscprice-count flex">
+                                <span><span>&#8377</span>95.00</span>
+                                <span>0.00</span>
+                            </div>
+                        </div>
+                        <div class="total-price">
+                            <span>Total</span>
+                            <span><span>&#8377</span>95</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="secure-chk">
+                    <svg viewBox="0 0 11 14" fill="currentColor" width="1em" height="1em"><g fill="currentColor" fill-rule="evenodd"><path d="M0 12.79c0 .558.445 1.01.996 1.01h9.008A1 1 0 0011 12.79V6.01c0-.558-.445-1.01-.996-1.01H.996A1 1 0 000 6.01v6.78z"></path><path d="M9.5 5v-.924C9.5 2.086 7.696.5 5.5.5c-2.196 0-4 1.586-4 3.576V5h1v-.924c0-1.407 1.33-2.576 3-2.576s3 1.17 3 2.576V5h1z" fill-rule="nonzero"></path></g></svg>
+                    <span>Secure Checkout</span>
+                </div>
             </div>
         </div>
     </section>

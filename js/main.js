@@ -9,8 +9,9 @@ const sec3 = document.getElementsByClassName('sec3full');
 const feedback = document.getElementById('feedbackbtn');
 const products = document.getElementById('products');
 const mobilediv = document.getElementById('mbdiv');
-const aboutus = document.querySelector('.aboutus')
-const feed = document.querySelector('.feed')
+const offerBtn = document.getElementById('offerbtn');
+const aboutus = document.querySelector('.aboutus');
+const feed = document.querySelector('.feed');
 const popup = document.getElementById('popup');
 const mobilenav = document.getElementById('mob');
 const overlay = document.createElement('div');
@@ -22,9 +23,6 @@ link1.addEventListener('mouseover', () => {
   svg1.classList.add('svghover');
 });
 
-// window.location.href.split('#')[0]
-// history.replaceState({}, document.title, ".");
-// window.location.href.substr(0, window.location.href.indexOf('#*'))
 link1.addEventListener('mouseout', () => {
   svg1.classList.remove('svghover');
 });
@@ -60,17 +58,22 @@ for (let j = 0; j < y; j++) {
 for (let j = 0; j < y; j++) {
   items[j].addEventListener('click', (event) => {
     event.stopPropagation(); // Stop the click event from propagating to the document
-  if (window.innerWidth<930) {
-      hiddenbox.classList.add('w-100') 
-  }
-  else{
-  hiddenbox.classList.toggle('width');
-  }
+    if (window.innerWidth < 930) {
+      hiddenbox.classList.add('w-100');
+    } else {
+      hiddenbox.classList.toggle('width');
+    }
   });
 }
-mobilenav.addEventListener('click',()=>{
-  mobilediv.classList.toggle('h-auto')
-})
+
+mobilenav.addEventListener('click', (event) => {
+  mobilediv.classList.toggle('h-auto');
+  event.stopPropagation();
+});
+
+document.addEventListener('click', () => {
+  mobilediv.classList.remove('h-auto');
+});
 
 document.addEventListener('click', (event) => {
   const clickedElement = event.target;
@@ -94,10 +97,9 @@ function hideProducts(event) {
 }
 
 function closeNav() {
-  if(hiddenbox.classList.contains('w-100')){
-    hiddenbox.classList.remove('w-100')
-  }
-  else{
+  if (hiddenbox.classList.contains('w-100')) {
+    hiddenbox.classList.remove('w-100');
+  } else {
     document.getElementById('hiddenbox').classList.remove('width');
   }
 }
@@ -131,6 +133,5 @@ overlay.addEventListener('click', () => {
 
 if(window.innerWidth < 930){
   document.querySelector('.sec2main').insertBefore(aboutus , feed)
-  // document.querySelector('.sec2main').replaceChild(feed , aboutus)
   document.querySelector('.newsh1').innerHTML = 'Stay Up-to-Date with Our Monthly Newsletter';
 }

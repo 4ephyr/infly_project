@@ -1007,12 +1007,12 @@ footer{
 }
 @media all and (width > 1525px) {
     .bigvector{
-        width: 74.9vw;
+        width: 73.9vw;
     }
 }
 @media all and ((width > 1690px)) {
     .bigvector{
-        width: 77.8vw;
+        width: 76.8vw;
     }
     .imgover{
       right: 3.5vw;
