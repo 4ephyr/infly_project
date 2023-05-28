@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
     margin: auto;
-    height: calc(100vh);
+    height: 100vh;
     justify-content: center;
     position: absolute;
     width: 100%;
@@ -65,16 +65,23 @@ font-weight: normal;
     }
 }
 @media all and (width<855px) {
+    .main{
+        flex-direction: column;
+    }
     .container{
         padding: 1rem 2rem;
     }
     .thanks span{
         font-size: 1.7rem;
     }
+    .thanks{
+        text-align: center;
+    }
 }
 @media all and (width<745px) {
     .main{
         flex-direction: column;
+        height: calc(100vh - 6.875rem);
     }
     .thanks{
         text-align: center;
@@ -90,6 +97,9 @@ font-weight: normal;
     }
     .thanks span{
         font-size: 1.8rem;
+    }
+    .thanks p{
+        text-indent: initial;
     }
     .thanks{
         width: 100%;
